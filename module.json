@@ -11,6 +11,6 @@
   "homepage": "https://github.com/ARMmbed/uif-ui-uptime-status-wrd",
   "license": "Apache-2.0",
   "dependencies": {
-    "uiframework": "^2.0.0"
+    "uiframework": "^3.0.0"
   }
 }
