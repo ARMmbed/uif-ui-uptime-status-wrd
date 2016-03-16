@@ -101,7 +101,11 @@ private:
     */
     uint32_t getVariableValue(void)
     {
-        uint32_t uptime = minar::stats::getUptime();
+        uint32_t uptime = 0;
+
+#if YOTTA_CFG_MINAR_STATS
+        uptime = minar::stats::getUptime();
+#endif
 
         printf("uptime: %lu\r\n", uptime);
 

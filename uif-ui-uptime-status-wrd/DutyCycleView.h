@@ -99,9 +99,13 @@ private:
     */
     uint32_t getVariableValue()
     {
-        uint64_t active = minar::stats::getActive();
-        uint64_t uptime = minar::stats::getUptime();
+        uint64_t active = 0;
+        uint64_t uptime = 1; // initialized to 1 to avoid dividing by 0
 
+#if YOTTA_CFG_MINAR_STATS
+        active = minar::stats::getActive();
+        uptime = minar::stats::getUptime();
+#endif
         return active * 100 * 100 / uptime;
     }
 
